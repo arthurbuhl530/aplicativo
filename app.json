@@ -3,6 +3,7 @@
   "slug": "2008-exemplo",
   "scheme": "2008-exemplo",
   "plugins": [
-    "expo-router"
+    "expo-router",
+    "expo-sqlite"
   ]
 }

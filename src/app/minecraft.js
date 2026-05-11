@@ -1,12 +1,14 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Link, Stack } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
-export default function Tela1() {
+export default function minecraft() {
+  const [likes, setLikes] = useState(0);
+
   return (
     <SafeAreaView style={estilos.container}>
 
@@ -38,6 +40,10 @@ export default function Tela1() {
             <Text style={estilos.textoBotao}>Jogar</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity onPress={() => setLikes(likes + 1)} style={estilos.likeButton}>
+            <Text style={estilos.likeButtonText}>Gostei {likes}</Text>
+          </TouchableOpacity>
+
           <Text style={estilos.info}>
             Espaço necessário: 49,95 gb
           </Text>
@@ -53,6 +59,15 @@ export default function Tela1() {
           <Text style={estilos.info}>
             Conquistas:
           </Text>
+
+          <View style={estilos.acoes}>
+            <TouchableOpacity onPress={() => Alert.alert('Atenção', 'Não é possível editar jogos padrão.')}>
+              <Text style={estilos.editar}>Editar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Alert.alert('Atenção', 'Não é possível excluir jogos padrão.')}>
+              <Text style={estilos.excluir}>Excluir</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
       </ScrollView>
@@ -120,6 +135,21 @@ const estilos = StyleSheet.create({
     fontWeight: 'bold'
   },
 
+  likeButton: {
+    backgroundColor: '#38a709d4',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    alignSelf: 'flex-start',
+    marginTop: 10
+  },
+
+  likeButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14
+  },
+
   info: {
     fontSize: 20,
     color: '#333',
@@ -139,5 +169,23 @@ const estilos = StyleSheet.create({
   textoLink: {
     color: '#fff',
     fontWeight: 'bold'
+  },
+
+  acoes: {
+    flexDirection: 'row',
+    gap: 20,
+    marginTop: 10,
+  },
+
+  editar: {
+    color: '#007bff',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+
+  excluir: {
+    color: '#f38ba8',
+    fontWeight: '700',
+    fontSize: 16,
   }
 });

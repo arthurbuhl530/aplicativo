@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
-export default function Tela2() {
+export default function Tela4() {
   return (
     <SafeAreaView style={estilos.container}>
 
@@ -26,12 +26,12 @@ export default function Tela2() {
        
         <View style={estilos.cartaoGrande}>
           <Image
-            source={require('./roblox.jpg')}
+            source={require('./fortnite.jpg')}
             style={estilos.imagemGrande}
           />
 
           <Text style={estilos.tituloJogoGrande}>
-            Roblox
+            Fortnite
           </Text>
 
           <TouchableOpacity style={estilos.botao}>
@@ -39,15 +39,15 @@ export default function Tela2() {
           </TouchableOpacity>
 
           <Text style={estilos.info}>
-            Espaço necessário: 30,95 gb
+            Espaço necessário: 60,95 gb
           </Text>
 
           <Text style={estilos.info}>
-            Última sessão: 5 de dez. 2020
+            Última sessão: 2 de dez. 2025
           </Text>
 
           <Text style={estilos.info}>
-            Tempo de jogo: 8,5 horas
+            Tempo de jogo: 7,9 horas
           </Text>
 
           <Text style={estilos.info}>
@@ -59,7 +59,8 @@ export default function Tela2() {
 
       <Link href="/" style={estilos.link}>
       Voltar
-    </Link>
+    
+      </Link>
 
     </SafeAreaView>
   );
@@ -115,7 +116,7 @@ const estilos = StyleSheet.create({
   },
 
   textoBotao: {
-    color: '#fff',
+    color: '#000000',
     fontWeight: 'bold'
   },
 
@@ -135,5 +136,8 @@ const estilos = StyleSheet.create({
     marginLeft: 15
   },
 
-  
+  textoLink: {
+    color: '#fff',
+    fontWeight: 'bold'
+  }
 });
